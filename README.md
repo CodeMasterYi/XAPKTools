@@ -2,8 +2,9 @@
 
 Apk & exe file downloaded from: [APKPure](https://apkpure.com/apk-install.html "APKPure")
 
-xapk struct:
-```
+## xapk struct
+
+```plain
 - Android
     - obb
     - ${ApplicationId}
@@ -13,7 +14,8 @@ manifest.json
 ${ApplicationId}.apk
 ```
 
-manifest.json content:
+## manifest.json content
+
 ```json
 {
    "xapk_version":1,
@@ -26,7 +28,7 @@ manifest.json content:
    "permissions":[
       "android.permission.INTERNET"
    ],
-   "total_size":${apkSize + obbSize},
+   "total_size":65535,
    "expansions":[
       {
          "file":"Android/obb/${ApplicationId}/main.${versionCode}.${ApplicationId}.obb",
@@ -36,3 +38,5 @@ manifest.json content:
    ]
 }
 ```
+
+`total_size` means ${apkSize + obbSize}
